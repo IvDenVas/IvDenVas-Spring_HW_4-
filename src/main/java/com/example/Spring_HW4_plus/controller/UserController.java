@@ -2,6 +2,8 @@ package com.example.Spring_HW4_plus.controller;
 
 import com.example.Spring_HW4_plus.model.User;
 import com.example.Spring_HW4_plus.service.UserService;
+import lombok.AllArgsConstructor;
+import lombok.extern.java.Log;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,12 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Controller
+@Log
+@AllArgsConstructor
 public class UserController {
     private final UserService userService;
-
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
 
     @GetMapping("/users")
     public String findAll(Model model){

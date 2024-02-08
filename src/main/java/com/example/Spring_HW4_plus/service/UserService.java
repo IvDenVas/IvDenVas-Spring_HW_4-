@@ -2,18 +2,14 @@ package com.example.Spring_HW4_plus.service;
 
 import com.example.Spring_HW4_plus.model.User;
 import com.example.Spring_HW4_plus.repository.UserRepository;
+import lombok.Data;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Data
 @Service
 public class UserService {
     private final UserRepository userRepository;
-
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-
 
     public List<User> findAll(){
         return userRepository.findAll();
